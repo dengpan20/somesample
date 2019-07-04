@@ -1,12 +1,23 @@
 package com.dengpan20.somesample
 
-import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import com.dengpan20.somesample.R.layout.activity_main
+import com.dengpan20.somesample.activity.ToolBarActivity
+import com.dengpan20.somesample.base.BaseActivity
+import kotlinx.android.synthetic.main.activity_main.*
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : BaseActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        setContentView(activity_main)
+        initListener()
     }
+
+    private fun initListener() {
+        btnToolBar.setOnClickListener {
+            toNextAct(ToolBarActivity::class.java)
+        }
+    }
+
 }
