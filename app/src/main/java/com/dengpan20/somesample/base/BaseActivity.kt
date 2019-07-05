@@ -6,9 +6,10 @@ import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import com.dengpan20.somesample.R
 import com.dengpan20.somesample.activity.ToolBarActivity
+import org.jetbrains.anko.AnkoLogger
 import kotlin.reflect.KClass
 
-abstract class BaseActivity : AppCompatActivity() {
+abstract class BaseActivity : AppCompatActivity(), AnkoLogger {
 
     companion object{
         fun show(context: Context,clazz: Class<Any>){

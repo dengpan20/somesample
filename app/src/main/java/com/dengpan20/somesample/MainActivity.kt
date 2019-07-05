@@ -2,9 +2,12 @@ package com.dengpan20.somesample
 
 import android.os.Bundle
 import com.dengpan20.somesample.R.layout.activity_main
+import com.dengpan20.somesample.activity.ApparLayoutActivity
 import com.dengpan20.somesample.activity.ToolBarActivity
 import com.dengpan20.somesample.base.BaseActivity
 import kotlinx.android.synthetic.main.activity_main.*
+import org.jetbrains.anko.button
+import org.jetbrains.anko.matchParent
 
 class MainActivity : BaseActivity() {
 
@@ -18,6 +21,15 @@ class MainActivity : BaseActivity() {
         btnToolBar.setOnClickListener {
             toNextAct(ToolBarActivity::class.java)
         }
+
+        llFirContainer.button("appbar"){
+            width = 0
+            height = matchParent
+            setOnClickListener{
+                toNextAct(ApparLayoutActivity::class.java)
+            }
+        }
     }
+
 
 }

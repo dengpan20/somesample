@@ -4,6 +4,7 @@ import android.content.Context;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.util.AttributeSet;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.LinearLayout;
@@ -68,7 +69,8 @@ public class ADHeader extends LinearLayout implements RefreshHeader {
      */
     @Override
     public void onPulling(float percent, int offset, int headerHeight, int maxDragHeight) {
-
+//        Log.e("ADHeader","percent = "+ percent +" offset = "+ offset+" headerHeight ="+headerHeight +" maxDragHeight "+maxDragHeight);
+        if(onHeaderChangeListener != null) onHeaderChangeListener.onPulling(percent,offset,headerHeight,maxDragHeight);
     }
 
     /**
@@ -81,7 +83,8 @@ public class ADHeader extends LinearLayout implements RefreshHeader {
 
     @Override
     public void onReleasing(float percent, int offset, int height, int extendHeight) {
-        onPulling(percent, offset, height, extendHeight);
+//        onPulling(percent, offset, height, extendHeight);
+        if(onHeaderChangeListener != null) onHeaderChangeListener.onPulling(percent,offset,height,extendHeight);
     }
 
     @Override
@@ -130,5 +133,15 @@ public class ADHeader extends LinearLayout implements RefreshHeader {
                 //完成
                 break;
         }
+    }
+
+    public interface OnHeaderChangeListener{
+        void onPulling(float percent, int offset, int headerHeight, int maxDragHeight);
+    }
+
+    OnHeaderChangeListener onHeaderChangeListener;
+
+    public void setOnHeaderChangeListener(OnHeaderChangeListener onHeaderChangeListener) {
+        this.onHeaderChangeListener = onHeaderChangeListener;
     }
 }
