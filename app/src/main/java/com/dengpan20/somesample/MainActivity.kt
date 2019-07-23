@@ -2,8 +2,7 @@ package com.dengpan20.somesample
 
 import android.os.Bundle
 import com.dengpan20.somesample.R.layout.activity_main
-import com.dengpan20.somesample.activity.ApparLayoutActivity
-import com.dengpan20.somesample.activity.ToolBarActivity
+import com.dengpan20.somesample.activity.*
 import com.dengpan20.somesample.base.BaseActivity
 import kotlinx.android.synthetic.main.activity_main.*
 import org.jetbrains.anko.button
@@ -28,6 +27,15 @@ class MainActivity : BaseActivity() {
             setOnClickListener{
                 toNextAct(ApparLayoutActivity::class.java)
             }
+        }
+        mvvm.setOnClickListener {
+            toNextAct(MVVMLoginActivity::class.java)
+        }
+        secondfloor.setOnClickListener{
+            toNextAct(SencodFloorActivity::class.java)
+        }
+        room.setOnClickListener {
+            toNextAct(RoomActivity::class.java)
         }
     }
 
