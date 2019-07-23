@@ -1,15 +1,11 @@
 package com.dengpan20.somesample.activity
 
-import android.content.Context
 import android.os.Bundle
-import android.view.View
-import android.view.ViewGroup
-
 import com.dengpan20.somesample.R.layout.activity_tool_bar_v1
 import com.dengpan20.somesample.base.BaseActivity
 import com.scwang.smartrefresh.layout.listener.OnRefreshListener
+import kotlinx.android.synthetic.main.activity_sencod_floor.view.*
 import kotlinx.android.synthetic.main.activity_tool_bar.*
-import org.jetbrains.anko.dip
 import org.jetbrains.anko.error
 import org.jetbrains.anko.info
 import org.jetbrains.anko.toast
@@ -17,6 +13,7 @@ import org.jetbrains.anko.toast
 class ToolBarActivity : BaseActivity() {
 
     private var percent:Float = 0.0f
+    private var isRefresh:Boolean = false
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(activity_tool_bar_v1)
@@ -27,8 +24,10 @@ class ToolBarActivity : BaseActivity() {
 //                    ivLogo.background.alpha = 255
 //                    tvLogoCenter.alpha = 1f
 //                }
+                isRefresh = true
             }
         }
+        smartRefresh.setDragRate(0.6f)
         adHeader.setOnHeaderChangeListener{percent1, offset, headerHeight, maxDragHeight ->
             //刷新的状态是需要显示
             //拉开的状态需要隐藏
@@ -66,7 +65,7 @@ class ToolBarActivity : BaseActivity() {
 //            }
             info("alpha = "+ ivLogo.background.alpha
             + "offset = $offset offsetF = $offseF offsetP = $offsetP offsetA = $offsetAlpha")
-            if(smartRefresh.isRefreshing){
+            if(isRefresh){
                 if (percent1 <0.6) {
                     smartRefresh.finishRefresh()
                     ivLogo.background.alpha = 255

@@ -13,24 +13,33 @@
             android:layout_width="match_parent"
             android:layout_marginTop="48dp"
             android:layout_height="match_parent">
+
         <com.dengpan20.somesample.view.ADHeader
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:id="@+id/adHeader"
-        />
+                android:layout_marginTop="?attr/actionBarSize"
+                />
+
         <LinearLayout
-                android:layout_width="match_parent" android:layout_height="match_parent"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:paddingTop="?attr/actionBarSize"
                 android:orientation="vertical">
 
         </LinearLayout>
     </com.scwang.smartrefresh.layout.SmartRefreshLayout>
-    <LinearLayout android:id="@+id/ivLogo"
-                  android:layout_width="match_parent"
-                  android:orientation="vertical"
-                  app:layout_constraintStart_toStartOf="parent"
-                  app:layout_constraintEnd_toEndOf="parent"
-                  android:background="@color/colorAccent"
-                  android:gravity="center" android:layout_height="48dp">
+
+    <LinearLayout
+            android:id="@+id/ivLogo"
+            android:layout_width="match_parent"
+            android:orientation="vertical"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:background="@color/colorAccent"
+            android:gravity="center"
+            android:layout_height="48dp">
+
         <ImageView
                 android:id="@+id/tvLogoCenter"
                 android:layout_width="wrap_content"

@@ -1,10 +1,9 @@
 package com.dengpan20.somesample.view;
 
 import android.content.Context;
-import android.support.annotation.NonNull;
-import android.support.annotation.Nullable;
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import android.util.AttributeSet;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.LinearLayout;
@@ -60,32 +59,15 @@ public class ADHeader extends LinearLayout implements RefreshHeader {
     public void onInitialized(@NonNull RefreshKernel kernel, int height, int extendHeight) {
 
     }
-    /**
-     * 手指拖动下拉（会连续多次调用，用于实时控制动画关键帧）
-     * @param percent 下拉的百分比 值 = offset/headerHeight (0 - percent - (headerHeight+maxDragHeight) / headerHeight )
-     * @param offset 下拉的像素偏移量  0 - offset - (headerHeight+maxDragHeight)
-     * @param headerHeight Header的高度
-     * @param maxDragHeight 最大拖动高度
-     */
-    @Override
-    public void onPulling(float percent, int offset, int headerHeight, int maxDragHeight) {
-//        Log.e("ADHeader","percent = "+ percent +" offset = "+ offset+" headerHeight ="+headerHeight +" maxDragHeight "+maxDragHeight);
-        if(onHeaderChangeListener != null) onHeaderChangeListener.onPulling(percent,offset,headerHeight,maxDragHeight);
-    }
-
-    /**
-     * 手指释放之后的持续动画（会连续多次调用）
-     * @param percent 下拉的百分比 值 = offset/footerHeight (0 - percent - (footerHeight+extendHeight) / footerHeight )
-     * @param offset 下拉的像素偏移量  0 - offset - (footerHeight+extendHeight)
-     * @param height 高度 HeaderHeight or FooterHeight
-     * @param extendHeight 扩展高度  extendHeaderHeight or extendFooterHeight
-     */
 
     @Override
-    public void onReleasing(float percent, int offset, int height, int extendHeight) {
-//        onPulling(percent, offset, height, extendHeight);
-        if(onHeaderChangeListener != null) onHeaderChangeListener.onPulling(percent,offset,height,extendHeight);
+    public void onMoving(boolean isDragging, float percent, int offset, int height, int maxDragHeight) {
+        if(onHeaderChangeListener != null) onHeaderChangeListener.onPulling(percent,offset,height,maxDragHeight);
+
     }
+
+
+
 
     @Override
     public void onReleased(RefreshLayout refreshLayout, int height, int extendHeight) {
@@ -94,7 +76,6 @@ public class ADHeader extends LinearLayout implements RefreshHeader {
 
     @Override
     public void onStartAnimator(@NonNull RefreshLayout refreshLayout, int height, int extendHeight) {
-
     }
 
     @Override
