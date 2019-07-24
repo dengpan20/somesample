@@ -18,7 +18,7 @@ public class NetPars {
     @ColumnInfo
     private int userid;
     @ColumnInfo
-    private Date  p_time;
+    private String p_time;
     @ColumnInfo
     private String p_content;
     @ColumnInfo
@@ -47,11 +47,11 @@ public class NetPars {
         this.userid = userid;
     }
 
-    public Date getP_time() {
+    public String getP_time() {
         return p_time;
     }
 
-    public void setP_time(Date p_time) {
+    public void setP_time(String p_time) {
         this.p_time = p_time;
     }
 

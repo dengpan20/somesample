@@ -10,11 +10,21 @@ import androidx.room.RoomDatabase;
  * Date: 2019/7/23 10:52
  * Description:Gmat 的数据库
  */
-@Database(entities ={Note.class,Level.class},version = 1 ,exportSchema = true)
+@Database(entities = {Note.class, Level.class,
+        Knows.class, LowerTiKu.class,
+        NetPars.class, OneObject.class,
+        Questions.class, Sections.class,
+        TwoObject.class, XuhaoQuestion.class,
+        XuhaoTiku.class}, version = 1, exportSchema = true)
 public abstract class GmatDataBase extends RoomDatabase {
     private static volatile GmatDataBase INSTANCE;
+
     public abstract NoteDao noteDao();
+
     public abstract LevelDao levelDao();
+    public abstract KnowsDao getKnowsDao();
+
+
 
     public static GmatDataBase getInstance(Context context) {
         if (INSTANCE == null) {

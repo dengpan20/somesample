@@ -2,7 +2,7 @@
   "formatVersion": 1,
   "database": {
     "version": 1,
-    "identityHash": "10d9da3776c6c96eb25ac0474d08eb1b",
+    "identityHash": "7ac5afb7e4f61b77a3de64b3c3ef7c00",
     "entities": [
       {
         "tableName": "x2_user_question_note",
@@ -86,12 +86,685 @@
         },
         "indices": [],
         "foreignKeys": []
+      },
+      {
+        "tableName": "x2_knows",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`knowsid` INTEGER NOT NULL, `knows` TEXT, `knowssectionid` INTEGER NOT NULL, `knowsdescribe` TEXT, `knowsstatus` INTEGER NOT NULL DEFAULT 1, PRIMARY KEY(`knowsid`))",
+        "fields": [
+          {
+            "fieldPath": "knowsid",
+            "columnName": "knowsid",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "knows",
+            "columnName": "knows",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "knowssectionid",
+            "columnName": "knowssectionid",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "knowsdescribe",
+            "columnName": "knowsdescribe",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "knowsstatus",
+            "columnName": "knowsstatus",
+            "affinity": "INTEGER",
+            "notNull": true,
+            "defaultValue": "1"
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "knowsid"
+          ],
+          "autoGenerate": false
+        },
+        "indices": [],
+        "foreignKeys": []
+      },
+      {
+        "tableName": "LowerTiKu",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`stid` INTEGER NOT NULL, `subjectid` INTEGER NOT NULL, `twoobjectid` INTEGER NOT NULL, `sectionid` INTEGER NOT NULL, `knowsid` INTEGER NOT NULL, `stname` TEXT, `questionid` TEXT, `type` INTEGER NOT NULL, `levelid` INTEGER NOT NULL, PRIMARY KEY(`stid`))",
+        "fields": [
+          {
+            "fieldPath": "stid",
+            "columnName": "stid",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "subjectid",
+            "columnName": "subjectid",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "twoobjectid",
+            "columnName": "twoobjectid",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "sectionid",
+            "columnName": "sectionid",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "knowsid",
+            "columnName": "knowsid",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "stname",
+            "columnName": "stname",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "questionid",
+            "columnName": "questionid",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "type",
+            "columnName": "type",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "levelid",
+            "columnName": "levelid",
+            "affinity": "INTEGER",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "stid"
+          ],
+          "autoGenerate": false
+        },
+        "indices": [],
+        "foreignKeys": []
+      },
+      {
+        "tableName": "NetPars",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`parsid` INTEGER NOT NULL, `userid` INTEGER NOT NULL, `p_time` TEXT, `p_content` TEXT, `p_audit` INTEGER NOT NULL, `price` INTEGER NOT NULL, `p_type` INTEGER NOT NULL, `p_questionid` INTEGER NOT NULL, PRIMARY KEY(`parsid`))",
+        "fields": [
+          {
+            "fieldPath": "parsid",
+            "columnName": "parsid",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "userid",
+            "columnName": "userid",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "p_time",
+            "columnName": "p_time",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "p_content",
+            "columnName": "p_content",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "p_audit",
+            "columnName": "p_audit",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "price",
+            "columnName": "price",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "p_type",
+            "columnName": "p_type",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "p_questionid",
+            "columnName": "p_questionid",
+            "affinity": "INTEGER",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "parsid"
+          ],
+          "autoGenerate": false
+        },
+        "indices": [],
+        "foreignKeys": []
+      },
+      {
+        "tableName": "x2_oneobject",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`oneobjectid` INTEGER NOT NULL, `oneobjecttype` TEXT, `oneobjectsort` INTEGER NOT NULL, `oneobjectchoice` INTEGER NOT NULL, PRIMARY KEY(`oneobjectid`))",
+        "fields": [
+          {
+            "fieldPath": "oneobjectid",
+            "columnName": "oneobjectid",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "oneobjecttype",
+            "columnName": "oneobjecttype",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "oneobjectsort",
+            "columnName": "oneobjectsort",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "oneobjectchoice",
+            "columnName": "oneobjectchoice",
+            "affinity": "INTEGER",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "oneobjectid"
+          ],
+          "autoGenerate": false
+        },
+        "indices": [],
+        "foreignKeys": []
+      },
+      {
+        "tableName": "x2_questions",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`questionid` INTEGER NOT NULL, `questiontype` INTEGER NOT NULL, `question` INTEGER NOT NULL, `questiontitle` INTEGER NOT NULL, `questionuserid` INTEGER NOT NULL, `questionusername` TEXT, `questionlastmodifyuser` TEXT, `questionselect` TEXT, `questionselectnumber` INTEGER NOT NULL, `questionanswer` TEXT, `questiondescribe` TEXT, `questionknowsid` TEXT, `questioncreatetime` INTEGER NOT NULL, `questionstatus` INTEGER NOT NULL, `questionhtml` TEXT, `questionparent` INTEGER NOT NULL, `questionsequence` INTEGER NOT NULL, `questionlevel` INTEGER NOT NULL, `oneobjecttype` INTEGER NOT NULL, `twoobjecttype` INTEGER NOT NULL, `subjecttype` INTEGER NOT NULL, `sectiontype` INTEGER NOT NULL, `questionarticle` TEXT, `articletitle` TEXT, `mathfoundation` TEXT, `views` INTEGER NOT NULL, `comments` INTEGER NOT NULL, `discusstime` TEXT, `discussmark` INTEGER NOT NULL, `readArticleId` INTEGER NOT NULL, `articleContent` TEXT, `questionNumber` INTEGER NOT NULL, `questionNumber1` INTEGER NOT NULL, `offer` TEXT, `isoffer` INTEGER NOT NULL, `isOG` INTEGER NOT NULL, `questionNumber2` INTEGER NOT NULL, `questionNumber3` INTEGER NOT NULL, `questionNumber4` INTEGER NOT NULL, `questionNumber5` INTEGER NOT NULL, `questionNumber6` INTEGER NOT NULL, PRIMARY KEY(`questionid`))",
+        "fields": [
+          {
+            "fieldPath": "questionid",
+            "columnName": "questionid",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "questiontype",
+            "columnName": "questiontype",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "question",
+            "columnName": "question",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "questiontitle",
+            "columnName": "questiontitle",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "questionuserid",
+            "columnName": "questionuserid",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "questionusername",
+            "columnName": "questionusername",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "questionlastmodifyuser",
+            "columnName": "questionlastmodifyuser",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "questionselect",
+            "columnName": "questionselect",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "questionselectnumber",
+            "columnName": "questionselectnumber",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "questionanswer",
+            "columnName": "questionanswer",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "questiondescribe",
+            "columnName": "questiondescribe",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "questionknowsid",
+            "columnName": "questionknowsid",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "questioncreatetime",
+            "columnName": "questioncreatetime",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "questionstatus",
+            "columnName": "questionstatus",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "questionhtml",
+            "columnName": "questionhtml",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "questionparent",
+            "columnName": "questionparent",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "questionsequence",
+            "columnName": "questionsequence",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "questionlevel",
+            "columnName": "questionlevel",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "oneobjecttype",
+            "columnName": "oneobjecttype",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "twoobjecttype",
+            "columnName": "twoobjecttype",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "subjecttype",
+            "columnName": "subjecttype",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "sectiontype",
+            "columnName": "sectiontype",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "questionarticle",
+            "columnName": "questionarticle",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "articletitle",
+            "columnName": "articletitle",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "mathfoundation",
+            "columnName": "mathfoundation",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "views",
+            "columnName": "views",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "comments",
+            "columnName": "comments",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "discusstime",
+            "columnName": "discusstime",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "discussmark",
+            "columnName": "discussmark",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "readArticleId",
+            "columnName": "readArticleId",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "articleContent",
+            "columnName": "articleContent",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "questionNumber",
+            "columnName": "questionNumber",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "questionNumber1",
+            "columnName": "questionNumber1",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "offer",
+            "columnName": "offer",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "isoffer",
+            "columnName": "isoffer",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "isOG",
+            "columnName": "isOG",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "questionNumber2",
+            "columnName": "questionNumber2",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "questionNumber3",
+            "columnName": "questionNumber3",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "questionNumber4",
+            "columnName": "questionNumber4",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "questionNumber5",
+            "columnName": "questionNumber5",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "questionNumber6",
+            "columnName": "questionNumber6",
+            "affinity": "INTEGER",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "questionid"
+          ],
+          "autoGenerate": false
+        },
+        "indices": [],
+        "foreignKeys": []
+      },
+      {
+        "tableName": "x2_sections",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`sectionid` INTEGER NOT NULL, `section` TEXT, `sectionsubjectid` INTEGER NOT NULL, `sectiondescribe` TEXT, PRIMARY KEY(`sectionid`))",
+        "fields": [
+          {
+            "fieldPath": "sectionid",
+            "columnName": "sectionid",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "section",
+            "columnName": "section",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "sectionsubjectid",
+            "columnName": "sectionsubjectid",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "sectiondescribe",
+            "columnName": "sectiondescribe",
+            "affinity": "TEXT",
+            "notNull": false
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "sectionid"
+          ],
+          "autoGenerate": false
+        },
+        "indices": [],
+        "foreignKeys": []
+      },
+      {
+        "tableName": "x2_twoobject",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`twoobjectid` INTEGER NOT NULL, `twoobjecttype` TEXT, `twoobjectsort` INTEGER NOT NULL, `twoobjectchoice` INTEGER NOT NULL, PRIMARY KEY(`twoobjectid`))",
+        "fields": [
+          {
+            "fieldPath": "twoobjectid",
+            "columnName": "twoobjectid",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "twoobjecttype",
+            "columnName": "twoobjecttype",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "twoobjectsort",
+            "columnName": "twoobjectsort",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "twoobjectchoice",
+            "columnName": "twoobjectchoice",
+            "affinity": "INTEGER",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "twoobjectid"
+          ],
+          "autoGenerate": false
+        },
+        "indices": [],
+        "foreignKeys": []
+      },
+      {
+        "tableName": "x2_xuhao_question",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` INTEGER NOT NULL, `tikuId` INTEGER NOT NULL, `questionid` INTEGER NOT NULL, `createTIme` INTEGER NOT NULL, PRIMARY KEY(`id`))",
+        "fields": [
+          {
+            "fieldPath": "id",
+            "columnName": "id",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "tikuId",
+            "columnName": "tikuId",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "questionid",
+            "columnName": "questionid",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "createTIme",
+            "columnName": "createTIme",
+            "affinity": "INTEGER",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "id"
+          ],
+          "autoGenerate": false
+        },
+        "indices": [],
+        "foreignKeys": []
+      },
+      {
+        "tableName": "x2_xuhao_tiku",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` INTEGER NOT NULL, `name` INTEGER NOT NULL, `twoobject` INTEGER NOT NULL, `section` INTEGER NOT NULL, `createTime` INTEGER NOT NULL, `number` INTEGER NOT NULL, `sort` INTEGER NOT NULL, `type` INTEGER NOT NULL, `orderNumber` INTEGER NOT NULL, `livesdk` INTEGER NOT NULL, `pass` INTEGER NOT NULL, `duration` INTEGER NOT NULL, PRIMARY KEY(`id`))",
+        "fields": [
+          {
+            "fieldPath": "id",
+            "columnName": "id",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "name",
+            "columnName": "name",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "twoobject",
+            "columnName": "twoobject",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "section",
+            "columnName": "section",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "createTime",
+            "columnName": "createTime",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "number",
+            "columnName": "number",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "sort",
+            "columnName": "sort",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "type",
+            "columnName": "type",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "orderNumber",
+            "columnName": "orderNumber",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "livesdk",
+            "columnName": "livesdk",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "pass",
+            "columnName": "pass",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "duration",
+            "columnName": "duration",
+            "affinity": "INTEGER",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "id"
+          ],
+          "autoGenerate": false
+        },
+        "indices": [],
+        "foreignKeys": []
       }
     ],
     "views": [],
     "setupQueries": [
       "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
-      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '10d9da3776c6c96eb25ac0474d08eb1b')"
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '7ac5afb7e4f61b77a3de64b3c3ef7c00')"
     ]
   }
 }

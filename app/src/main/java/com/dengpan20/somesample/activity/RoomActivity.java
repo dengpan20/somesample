@@ -20,89 +20,92 @@ public class RoomActivity extends BaseActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_room);
         GmatDataBase base = GmatDataBase.getInstance(this);
-        LevelDao levelDao = base.levelDao();
-        NoteDao noteDao = base.noteDao();
-            levelDao.getLevel()
-            .subscribeOn(Schedulers.io())
-            .observeOn(AndroidSchedulers.mainThread())
-            .subscribe(new SingleObserver<List<Level>>() {
-                @Override
-                public void onSubscribe(Disposable d) {
+        testLevel(base);
+        testNotes(base);
+        testKnows(base);
+    }
 
-                }
+    private void testKnows(GmatDataBase base) {
+        KnowsDao knowsDao = base.getKnowsDao();
+        knowsDao.getAll()
+                .subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe(new SingleObserver<List<Knows>>() {
+                    @Override
+                    public void onSubscribe(Disposable d) {
 
-                @Override
-                public void onSuccess(List<Level> aLong) {
-                    for (int i = 0;i<aLong.size();i++){
-                        String s = aLong.get(i).toString();
-                        Log.e("===",s);
                     }
+
+                    @Override
+                    public void onSuccess(List<Knows> datas) {
+                        printeDatas(datas);
+                    }
+
+                    @Override
+                    public void onError(Throwable e) {
+                        Log.d("===SingleError",e.getMessage());
+                    }
+                });
+    }
+
+    /**
+     * 打印Data
+     * @param datas
+     */
+    private void printeDatas(List<?> datas) {
+        for (int i = 0;i<datas.size();i++){
+            String s = datas.get(i).toString();
+            Log.e("===",s);
+        }
+    }
+
+    private void testNotes(GmatDataBase base) {
+        NoteDao noteDao = base.noteDao();
+        noteDao.getNote(1)
+                .subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe(new SingleObserver<Note>() {
+                    @Override
+                    public void onSubscribe(Disposable d) {
+
+                    }
+
+                    @Override
+                    public void onSuccess(Note note) {
+                        Log.d("===SingleSuccess",note == null ? "not is null" :note.toString());
+                    }
+
+                    @Override
+                    public void onError(Throwable e) {
+                        Log.d("===SingleError",e.getMessage());
+                    }
+                });
+    }
+
+    private void testLevel(GmatDataBase base) {
+        LevelDao levelDao = base.levelDao();
+        levelDao.getLevel()
+        .subscribeOn(Schedulers.io())
+        .observeOn(AndroidSchedulers.mainThread())
+        .subscribe(new SingleObserver<List<Level>>() {
+            @Override
+            public void onSubscribe(Disposable d) {
+
+            }
+
+            @Override
+            public void onSuccess(List<Level> aLong) {
+                for (int i = 0;i<aLong.size();i++){
+                    String s = aLong.get(i).toString();
+                    Log.e("===",s);
                 }
+            }
 
-                @Override
-                public void onError(Throwable e) {
-                    Log.d("===SingleError",e.getMessage());
-                }
-            });
-
-//        for (int i =0 ;i<2;i++){
-//            Level level = new Level();
-//            level.setLevel("jibie");
-//            level.setLevelid(i+1);
-//            levelDao.insert(level)
-//            .subscribeOn(Schedulers.io())
-//            .observeOn(AndroidSchedulers.mainThread())
-//            .subscribe(new SingleObserver<Long>() {
-//                @Override
-//                public void onSubscribe(Disposable d) {
-//
-//                }
-//
-//                @Override
-//                public void onSuccess(Long aLong) {
-//                    Log.d("===SingleSuccess",aLong+"");
-//                }
-//
-//                @Override
-//                public void onError(Throwable e) {
-//                    Log.d("===SingleError",e.getMessage());
-//                }
-//            });
-//
-//        }
-
-
-//        for (int i =0 ;i<2;i++){
-//            Note note = new Note();
-//            note.setContent("jibie");
-//            note.setUserid(i+1);
-//            noteDao.insert(note)
-//                    .subscribeOn(Schedulers.io())
-//                    .observeOn(AndroidSchedulers.mainThread())
-//                    .subscribe(new SingleObserver<Long>() {
-//                        @Override
-//                        public void onSubscribe(Disposable d) {
-//
-//                        }
-//
-//                        @Override
-//                        public void onSuccess(Long aLong) {
-//                            Log.d("===SingleNoteSuccess",aLong+"");
-//                        }
-//
-//                        @Override
-//                        public void onError(Throwable e) {
-//                            Log.d("===SingleNoteError",e.getMessage());
-//                        }
-//                    });
-//
-//        }
-
-
-
-
-
-
+            @Override
+            public void onError(Throwable e) {
+                Log.d("===SingleError",e.getMessage());
+            }
+        });
     }
 
     @NotNull
