@@ -37,6 +37,7 @@ class MainActivity : BaseActivity() {
         room.setOnClickListener {
             toNextAct(RoomActivity::class.java)
         }
+        xpopup.setOnClickListener { toNextAct(XPopupActivity::class.java) }
     }
 
 

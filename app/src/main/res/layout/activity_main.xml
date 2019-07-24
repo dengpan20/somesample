@@ -46,4 +46,28 @@
                 android:layout_height="match_parent"/>
     </androidx.appcompat.widget.LinearLayoutCompat>
 
+    <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="48dp">
+        <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/xpopup"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:text="Xpop"
+                android:layout_height="match_parent"/>
+        <!--<androidx.appcompat.widget.AppCompatButton-->
+                <!--android:id="@+id/secondfloor"-->
+                <!--android:layout_width="0dp"-->
+                <!--android:layout_weight="1"-->
+                <!--android:text="淘宝二楼"-->
+                <!--android:layout_height="match_parent"/>-->
+
+        <!--<androidx.appcompat.widget.AppCompatButton-->
+                <!--android:id="@+id/room"-->
+                <!--android:layout_width="0dp"-->
+                <!--android:layout_weight="1"-->
+                <!--android:text="ROOM"-->
+                <!--android:layout_height="match_parent"/>-->
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
 </androidx.appcompat.widget.LinearLayoutCompat>

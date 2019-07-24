@@ -3,15 +3,18 @@
           package="com.dengpan20.somesample">
 
     <application
+            android:name=".SampleApp"
             android:allowBackup="true"
             android:icon="@mipmap/ic_launcher"
             android:label="@string/app_name"
             android:roundIcon="@mipmap/ic_launcher_round"
             android:supportsRtl="true"
-            android:name=".SampleApp"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar">
+        <activity android:name=".activity.XPopupActivity">
+        </activity>
 
         <service android:name=".db.DBService"/>
+
         <activity android:name=".activity.RoomActivity">
         </activity>
         <activity android:name=".activity.SencodFloorActivity">
@@ -29,8 +32,6 @@
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
-
-
     </application>
 
 </manifest>
