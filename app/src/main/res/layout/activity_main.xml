@@ -55,12 +55,12 @@
                 android:layout_weight="1"
                 android:text="Xpop"
                 android:layout_height="match_parent"/>
-        <!--<androidx.appcompat.widget.AppCompatButton-->
-                <!--android:id="@+id/secondfloor"-->
-                <!--android:layout_width="0dp"-->
-                <!--android:layout_weight="1"-->
-                <!--android:text="淘宝二楼"-->
-                <!--android:layout_height="match_parent"/>-->
+        <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/constait"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:text="约束布局"
+                android:layout_height="match_parent"/>
 
         <!--<androidx.appcompat.widget.AppCompatButton-->
                 <!--android:id="@+id/room"-->

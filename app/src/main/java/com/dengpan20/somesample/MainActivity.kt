@@ -38,6 +38,7 @@ class MainActivity : BaseActivity() {
             toNextAct(RoomActivity::class.java)
         }
         xpopup.setOnClickListener { toNextAct(XPopupActivity::class.java) }
+        constait.setOnClickListener { toNextAct(ConstraitLayoutActivity::class.java) }
     }
 
 
