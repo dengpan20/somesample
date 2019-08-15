@@ -62,12 +62,12 @@
                 android:text="约束布局"
                 android:layout_height="match_parent"/>
 
-        <!--<androidx.appcompat.widget.AppCompatButton-->
-                <!--android:id="@+id/room"-->
-                <!--android:layout_width="0dp"-->
-                <!--android:layout_weight="1"-->
-                <!--android:text="ROOM"-->
-                <!--android:layout_height="match_parent"/>-->
+        <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/orc"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:text="ORC"
+                android:layout_height="match_parent"/>
     </androidx.appcompat.widget.LinearLayoutCompat>
 
 </androidx.appcompat.widget.LinearLayoutCompat>

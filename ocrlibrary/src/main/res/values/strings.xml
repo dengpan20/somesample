@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">OCRLibrary</string>
+
+    <string name="camera_permission_required">本功能需要相机权限！</string>
+    <string name="tip_title">请拖动裁剪框四角选择一行题目</string>
+    <string name="no_tip">不在提示</string>
+    <string name="go_on">继续</string>
+    <string name="input_search_content">请输入查询内容</string>
+    <string name="cancel">取消</string>
+    <string name="search_by_photo">拍照搜索</string>
+    <string name="retake">重新拍照</string>
+</resources>
