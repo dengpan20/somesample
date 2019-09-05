@@ -10,6 +10,10 @@
             android:roundIcon="@mipmap/ic_launcher_round"
             android:supportsRtl="true"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar">
+        <activity android:name=".activity.MPChartActivity">
+        </activity>
+        <activity android:name=".activity.PageTurningActivity">
+        </activity>
         <activity android:name=".activity.ConstraitLayoutActivity">
         </activity>
         <activity android:name=".activity.XPopupActivity">

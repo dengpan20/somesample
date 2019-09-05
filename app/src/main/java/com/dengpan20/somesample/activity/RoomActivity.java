@@ -1,7 +1,13 @@
 package com.dengpan20.somesample.activity;
 
+import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.util.Log;
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import com.bumptech.glide.Glide;
+import com.bumptech.glide.request.target.SimpleTarget;
+import com.bumptech.glide.request.transition.Transition;
 import com.dengpan20.somesample.R;
 import com.dengpan20.somesample.base.BaseActivity;
 import com.dengpan20.somesample.db.*;
@@ -23,6 +29,9 @@ public class RoomActivity extends BaseActivity {
         testLevel(base);
         testNotes(base);
         testKnows(base);
+
+
+
     }
 
     private void testKnows(GmatDataBase base) {

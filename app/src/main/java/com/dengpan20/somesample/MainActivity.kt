@@ -1,10 +1,7 @@
 package com.dengpan20.somesample
 
-import android.app.PendingIntent.getActivity
 import android.content.Intent
-import android.graphics.Camera
 import android.os.Bundle
-import androidx.room.util.FileUtil
 import com.dengpan20.somesample.R.layout.activity_main
 import com.dengpan20.somesample.activity.*
 import com.dengpan20.somesample.base.BaseActivity
@@ -41,6 +38,7 @@ class MainActivity : BaseActivity() {
                 toNextAct(ApparLayoutActivity::class.java)
             }
         }
+        chart.setOnClickListener { toNextAct(MPChartActivity::class.java) }
         mvvm.setOnClickListener {
             toNextAct(MVVMLoginActivity::class.java)
         }
@@ -55,6 +53,7 @@ class MainActivity : BaseActivity() {
         orc.setOnClickListener{
             gotoCameraAct()
         }
+        textView.setOnClickListener { toNextAct(PageTurningActivity::class.java) }
     }
 
     private fun gotoCameraAct() {
