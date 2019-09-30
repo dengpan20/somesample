@@ -87,7 +87,7 @@ public class ADHeader extends LinearLayout implements RefreshHeader {
 //            mHeaderText.setText("刷新失败");
 //        }
 //        return 500;//延迟500毫秒之后再弹回
-        return 0;
+        return 300;
     }
 
     @Override

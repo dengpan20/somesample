@@ -26,6 +26,10 @@
                 android:layout_height="match_parent"
                 android:paddingTop="?attr/actionBarSize"
                 android:orientation="vertical">
+            <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="内容区域"/>
 
         </LinearLayout>
     </com.scwang.smartrefresh.layout.SmartRefreshLayout>
