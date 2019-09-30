@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.util.Log;
 import com.dengpan20.somesample.R;
 import com.dengpan20.somesample.base.BaseActivity;
+import com.dengpan20.somesample.view.chart.CustomXAxisRenderer;
 import com.github.mikephil.charting.charts.BarChart;
 import com.github.mikephil.charting.charts.CombinedChart;
 import com.github.mikephil.charting.components.XAxis;
@@ -70,6 +71,10 @@ public class MPChartActivity extends BaseActivity {
         xAxis.setDrawGridLines(false);
         xAxis.setPosition(XAxis.XAxisPosition.BOTTOM);
         xAxis.setAxisMinimum(0f);
+        chart1.setExtraBottomOffset(2*12f);
+        xAxis.setTextSize(12f);
+        chart1.setXAxisRenderer(new CustomXAxisRenderer(chart1.getViewPortHandler(), chart1.getXAxis(), chart1.getTransformer(YAxis.AxisDependency.LEFT)));
+
 //        xAxis.setGranularity(1f);
         xAxis.setValueFormatter(new ValueFormatter() {
             @Override

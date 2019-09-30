@@ -54,6 +54,9 @@ class MainActivity : BaseActivity() {
             gotoCameraAct()
         }
         textView.setOnClickListener { toNextAct(PageTurningActivity::class.java) }
+        webVideo.setOnClickListener{
+            toNextAct(VideoWebActivity::class.java)
+        }
     }
 
     private fun gotoCameraAct() {

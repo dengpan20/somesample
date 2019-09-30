@@ -87,9 +87,10 @@
                 android:layout_height="match_parent"/>
 
         <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/webVideo"
                 android:layout_width="0dp"
                 android:layout_weight="1"
-                android:text="place"
+                android:text="网页视频"
                 android:layout_height="match_parent"/>
     </androidx.appcompat.widget.LinearLayoutCompat>
 
