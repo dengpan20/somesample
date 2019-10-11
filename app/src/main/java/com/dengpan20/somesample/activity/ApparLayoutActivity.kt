@@ -15,7 +15,7 @@ class ApparLayoutActivity : BaseActivity() {
         setContentView(R.layout.activity_appar_layout)
 //        smartRefresh.setHeaderInsetStartPx(btnToolBar.measuredHeight)
 //        smartRefresh.setHeaderInsetStart(48f)
-
+//        smartRefresh.setHeaderInsetStart(48f)
         val db = GmatDataBase.getInstance(this)
         db.noteDao()
             .getNote(3)

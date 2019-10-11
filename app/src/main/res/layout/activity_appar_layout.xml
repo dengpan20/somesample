@@ -1,5 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
-
 <RelativeLayout
         xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:tools="http://schemas.android.com/tools"
@@ -9,84 +8,48 @@
         app:layout_collapseMode="parallax"
         android:fitsSystemWindows="true"
         tools:context=".activity.ApparLayoutActivity">
-
-    <androidx.coordinatorlayout.widget.CoordinatorLayout
+    <RelativeLayout
+            android:id="@+id/rlHearder"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            app:layout_collapseMode="parallax"
-            tools:context=".activity.ApparLayoutActivity">
-
-        <com.google.android.material.appbar.AppBarLayout
-                android:layout_width="match_parent"
-                app:layout_behavior="com.dengpan20.somesample.view.behavior.PullRefreshBehavior"
-                android:layout_height="wrap_content">
-
-            <com.google.android.material.appbar.CollapsingToolbarLayout
-                    android:layout_width="match_parent"
-                    app:layout_scrollFlags="scroll|exitUntilCollapsed|snap|snapMargins"
-                    android:layout_height="wrap_content">
-                <ImageView
-                        android:layout_width="match_parent"
-                        android:layout_height="100dp"
-                        android:minHeight="48dp"
-                        app:layout_collapseMode="parallax"
-                        android:src="@mipmap/ic_launcher_round"/>
-                <androidx.appcompat.widget.Toolbar
-                        android:id="@+id/btnToolBar"
-                        android:layout_width="match_parent"
-                        android:layout_height="48dp"
-                        app:statusBarBackground="#00000000"
-                        android:background="#00000000"
-                        app:layout_collapseMode="pin"
-                        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"/>
-            </com.google.android.material.appbar.CollapsingToolbarLayout>
-
-        </com.google.android.material.appbar.AppBarLayout>
-
-
-        <androidx.core.widget.NestedScrollView
+            android:background="#00000000"
+            android:layout_height="48dp">
+        <TextView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                app:layout_behavior="@string/appbar_scrolling_view_behavior">
+                android:background="#00000000"
+                android:layout_centerVertical="true"
+                android:gravity="center_vertical"
+                android:padding="@dimen/dp_10"
+                android:text="@string/app_name"/>
+    </RelativeLayout>
+    <com.scwang.smartrefresh.layout.SmartRefreshLayout
+            android:id="@+id/smartRefresh"
+            android:layout_width="match_parent"
+            app:srlFixedHeaderViewId="@id/rlHearder"
 
-            <LinearLayout
+            android:layout_height="match_parent">
+
+        <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+            <androidx.core.widget.NestedScrollView
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical">
-                <TextView
+                    android:layout_height="match_parent">
+                <LinearLayout
                         android:layout_width="match_parent"
-                        android:layout_height="80dp"
-                        android:text="@string/app_name"/>
-            </LinearLayout>
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+                    <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="内容"/>
+                </LinearLayout>
+            </androidx.core.widget.NestedScrollView>
+        </LinearLayout>
 
-
-        </androidx.core.widget.NestedScrollView>
-
-
-        <!--<com.scwang.smartrefresh.layout.SmartRefreshLayout-->
-        <!--android:id="@+id/smartRefresh"-->
-        <!--android:layout_width="match_parent"-->
-        <!--android:background="@color/colorAccent"-->
-        <!--app:layout_behavior="@string/appbar_scrolling_view_behavior"-->
-        <!--android:layout_height="match_parent">-->
-
-        <!--<com.dengpan20.somesample.view.ADHeader-->
-        <!--android:layout_width="match_parent"-->
-        <!--android:layout_height="wrap_content"-->
-        <!--android:id="@+id/adHeader"-->
-        <!--/>-->
-
-        <!--<TextView-->
-        <!--android:layout_width="match_parent"-->
-        <!--android:layout_height="500dp"-->
-        <!--android:text="@string/app_name"-->
-        <!--/>-->
-
-        <!--</com.scwang.smartrefresh.layout.SmartRefreshLayout>-->
-
-
-    </androidx.coordinatorlayout.widget.CoordinatorLayout>
-
+    </com.scwang.smartrefresh.layout.SmartRefreshLayout>
 
 </RelativeLayout>
 
