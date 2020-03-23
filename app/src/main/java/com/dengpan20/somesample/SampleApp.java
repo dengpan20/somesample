@@ -1,7 +1,10 @@
 package com.dengpan20.somesample;
 
 import android.app.Application;
+import android.content.Context;
 import android.content.Intent;
+
+import androidx.multidex.MultiDex;
 import androidx.room.DatabaseConfiguration;
 import com.dengpan20.somesample.db.DBManager;
 import com.dengpan20.somesample.db.DBService;
@@ -22,5 +25,13 @@ public class SampleApp extends Application {
         Intent intent = new Intent(this, DBService.class);
         startService(intent);
 //        GmatDataBase.getInstance(this);
+    }
+
+
+    @Override
+    protected void attachBaseContext(Context base) {
+        super.attachBaseContext(base);
+        MultiDex.install(this);
+
     }
 }

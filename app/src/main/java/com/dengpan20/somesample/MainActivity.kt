@@ -2,23 +2,54 @@ package com.dengpan20.somesample
 
 import android.content.Intent
 import android.os.Bundle
+import androidx.recyclerview.widget.GridLayoutManager
+import com.chad.library.adapter.base.BaseQuickAdapter
 import com.dengpan20.somesample.R.layout.activity_main
 import com.dengpan20.somesample.activity.*
+import com.dengpan20.somesample.activity.adapter.FunListAdapter
 import com.dengpan20.somesample.base.BaseActivity
+import com.dengpan20.somesample.bean.FunBean
 import com.lgw.ocrlibrary.ocr.camera.CameraActivity
 import com.lgw.ocrlibrary.ocr.thrlib.OCRProxy
 import kotlinx.android.synthetic.main.activity_main.*
 import org.jetbrains.anko.button
+import org.jetbrains.anko.info
 import org.jetbrains.anko.matchParent
+import org.jetbrains.anko.toast
 import java.io.File
 
 class MainActivity : BaseActivity() {
     private val REQUEST_CODE_GENERAL = 105
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(activity_main)
         OCRProxy.initToken(this)
         initListener()
+        initFunList()
+
+    }
+
+    private fun initFunList() {
+        val funList = FunListAdapter()
+        recycler.layoutManager = GridLayoutManager(this,3)
+        recycler.adapter = funList
+        funList.replaceData(getFunListData())
+        funList.onItemClickListener = BaseQuickAdapter.OnItemClickListener{
+            adapter, view, position ->
+            toast("点击")
+            when(position){
+                0 -> toNextAct(RecyclerTabActivity::class.java) //Recycler Tablayout 联动
+            }
+        }
+    }
+
+    private fun getFunListData(): MutableCollection<out FunBean> {
+        var  list = ArrayList<FunBean>()
+//        list.plus(FunBean(0,"RecyclerTab"))
+        list.add(FunBean(0,"RecyclerTab"))
+        info("ooo=="+list.size)
+        return list
     }
 
     override fun onDestroy() {
