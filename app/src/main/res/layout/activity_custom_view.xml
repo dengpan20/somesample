@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:context=".activity.CustomViewActivity">
+
+
+    <!--<TextView-->
+            <!--android:id="@+id/tvValue1"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:textColor="@color/font_dark"/>-->
+
+
+    <!--<com.dengpan20.somesample.view.HorizontalScaleView-->
+            <!--android:id="@+id/rulerView"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="400dp"/>-->
+
+    <!--&lt;!&ndash;<TextView&ndash;&gt;-->
+            <!--android:id="@+id/tvValue2"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:textColor="@color/font_dark"-->
+            <!--android:layout_height="wrap_content"/>-->
+
+    <!--<com.dengpan20.somesample.view.RulerView-->
+            <!--android:id="@+id/rulerView2"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"/>-->
+
+
+    <!--数字和单位-->
+    <yanzhikai.ruler.KgNumberLayout
+            android:id="@+id/knl_bottom_head"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:kgTextSize="20sp"
+            app:scaleTextSize="50sp" />
+
+    <!--尺子-->
+    <com.dengpan20.somesample.view.DPRuler
+            android:id="@+id/br_top_head"
+            android:background="@color/colorPrimaryDark"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:layout_marginTop="16dp"
+            app:bigScaleLength="30dp"
+            app:bigScaleWidth="2dp"
+            app:count="10"
+            app:currentScale="666"
+            app:cursorDrawable="@drawable/cursor_shape"
+            app:cursorHeight="45dp"
+            app:cursorWidth="4dp"
+            app:maxScale="2000"
+            app:minScale="464"
+            app:numberTextSize="22sp"
+            app:paddingStartAndEnd="10dp"
+            app:rulerStyle="TOP_HEAD"
+            app:scaleInterval="11.5dp"
+            app:smallScaleLength="30dp"
+            app:smallScaleWidth="2dp"
+            app:textMarginHead="80dp" />
+</LinearLayout>

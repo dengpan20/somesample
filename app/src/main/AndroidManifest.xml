@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-        package="com.dengpan20.somesample">
+          package="com.dengpan20.somesample">
 
-    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.INTERNET"/>
 
     <application
             android:name=".SampleApp"
@@ -13,28 +13,30 @@
             android:supportsRtl="true"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar"
             android:usesCleartextTraffic="true">
-        <activity android:name=".activity.RecyclerTabActivity"></activity>
+        <activity android:name=".activity.CustomViewActivity">
+        </activity>
+        <activity android:name=".activity.RecyclerTabActivity"/>
         <activity
                 android:name=".activity.VideoWebActivity"
                 android:configChanges="orientation|screenSize|keyboardHidden"
-                android:hardwareAccelerated="true"></activity>
-        <activity android:name=".activity.MPChartActivity"></activity>
-        <activity android:name=".activity.PageTurningActivity"></activity>
-        <activity android:name=".activity.ConstraitLayoutActivity"></activity>
-        <activity android:name=".activity.XPopupActivity"></activity>
+                android:hardwareAccelerated="true"/>
+        <activity android:name=".activity.MPChartActivity"/>
+        <activity android:name=".activity.PageTurningActivity"/>
+        <activity android:name=".activity.ConstraitLayoutActivity"/>
+        <activity android:name=".activity.XPopupActivity"/>
 
-        <service android:name=".db.DBService" />
+        <service android:name=".db.DBService"/>
 
-        <activity android:name=".activity.RoomActivity"></activity>
-        <activity android:name=".activity.SencodFloorActivity"></activity>
-        <activity android:name=".activity.MVVMLoginActivity"></activity>
-        <activity android:name=".activity.ApparLayoutActivity"></activity>
-        <activity android:name=".activity.ToolBarActivity"></activity>
+        <activity android:name=".activity.RoomActivity"/>
+        <activity android:name=".activity.SencodFloorActivity"/>
+        <activity android:name=".activity.MVVMLoginActivity"/>
+        <activity android:name=".activity.ApparLayoutActivity"/>
+        <activity android:name=".activity.ToolBarActivity"/>
         <activity android:name=".MainActivity">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+                <action android:name="android.intent.action.MAIN"/>
 
-                <category android:name="android.intent.category.LAUNCHER" />
+                <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
     </application>

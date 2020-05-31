@@ -40,6 +40,7 @@ class MainActivity : BaseActivity() {
             toast("点击")
             when(position){
                 0 -> toNextAct(RecyclerTabActivity::class.java) //Recycler Tablayout 联动
+                1 -> toNextAct(CustomViewActivity::class.java)
             }
         }
     }
@@ -48,6 +49,7 @@ class MainActivity : BaseActivity() {
         var  list = ArrayList<FunBean>()
 //        list.plus(FunBean(0,"RecyclerTab"))
         list.add(FunBean(0,"RecyclerTab"))
+        list.add(FunBean(1,"RulerView"))
         info("ooo=="+list.size)
         return list
     }
